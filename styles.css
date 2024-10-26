@@ -5,7 +5,7 @@
 body {
     margin: 0;
     font-family: "Montserrat";/*estilo de letra*/
-    background-color: #e2eaff;/*color de fondo*/
+    background-color: #e4e7ee;/*color de fondo*/
     color: #101632dd;
 }
 body,div,ul,nav,header,footer,a,li,label {
@@ -74,8 +74,8 @@ se angosta la pantalla*/
  /*ACA SE ACTIVA EL ITEM AL PASAR EL MAUS POR
  ENCIMA*/ 
 .header__nav-item a {
-  color: #48e;
-  text-decoration: none;
+  color: rgb(218, 15, 99);
+  text-decoration-line: underline;
 }
 .header__nav-item :is(:hover,:active) {
   text-decoration: underline;
@@ -87,7 +87,7 @@ HEADER QUERIES*/
 
   .header__nav {
     display: block;
-    position: static;
+    position: bottom;
     height: auto;
     width: auto;
     justify-content: space-between;
