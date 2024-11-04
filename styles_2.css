@@ -1,0 +1,129 @@
+/*GRID. */
+body {
+    margin: 0;
+    font-family: sans-serif;
+   }
+   /*ACA DAMOS LA FUNCION GRID.AL HACER ESTO,
+   NO COLAPSA EL MARGEN, ES DECIR, EL MARGEN
+   ES DE 20PX PORQUE SE SUMAN LOS MARGENES 
+   DE ARRIBA Y EL DE BAJO.*/
+.grid {
+  display: grid;
+  height: 80vh;
+
+  /*LO SIG. SE DA LAS COLUMNAS QUE UNO QUIERE. 
+  EN ESTE CASO 3 COLUM. DE 200PX. TAMBIEN
+  SE PUEDE LLENA CN AUTO,ACA SE DISTRIBUYE
+  EL ESPACIO HASTA HEIGHT:80VH.SI SE OCUPA
+  1FR, ESE OCUPA TODO EL ANCHO DISPONIBLE Y LOS ESPACIOS SON IGUALES.
+  EJEMPLO:1FR 1FR 300PX.AMBIE SE DA OTRA OPCION QUE ES REPEAT(4,1FT)
+  OSEA,4 COLUMNAS DE 1FT.OTRA OPCION ES MINMAX(300PX,500PX),ESSEENCOJE HASTA300PX
+  Y SE AGRANDA HASTA 500PX.SE PUEDE MEZLAR LAS DOS OPCIONES:
+  REPEAT(4,MINMAX(100PX,300PX))*/
+  grid-template-columns: 200PX 200PX 300px;
+   /*TAMBIEN SE PUEDEN MODIFICAR LAS FILAS
+   O AGREGAR MAS CON ROWS.TAMBIEN SE DA LAS GRILLAS IMPLICITAS
+   QUE SON LAS DEL ORDENADOR,ESTAN AHI PERO LAS DEFINIMOS,LAS QUE DEFINIMOS
+   SON LAS EXPLICITAS.SE PUDE APRECIS EN EL SIG.
+   GRID-TEMPLATE-ROWS:REPEAT(3,200PX);
+   GRID-AUTO-ROWS:50PX. HAY OTRA OPCION QUE ESEL GRIL-AUTO-FLOW:COLUMN;
+   SI SE AGRGAN MAS ELEMENTOS EN HTML,ESTOS SE AGRUPAN AUTOMATICAMENTEEN
+   COLUMNAS,TAMBIEN PUEDE SER FILAS(ROWS).
+   PARA SEPARAR LAS CAJAS ENTRE SI SE UTILIZA:
+   COLUMN-GAP:20PX Y ROW-GAP:20PX O GAP:20PX.
+   TAMBIEN SE PUED ANOTAR: GAP:25PX 5PX.*/ 
+   grid-template-rows: 400px 200px;
+     /*TODO LO ANTERIOR SE DA EN LOSGRID ESTATICOS; EN LOS GRID
+     DINAMICOS,ACA SE TRABAJA CON REPEAT, SE DA LO SIG.
+     AUTO-FIT:AJUSTA,SE CRA NUEVAS COLUMNAS;CUANDO HAY ESPACIO SUFICIENTE PARA 
+     OTRA COLUMNA ,LO CARGA.CUANDO UTILIZAMOS AUTO-FILL, OCURE LO MISMO, LA UNICA DIFERENCI
+     ES CUANDO HAY POCOS ELEMENTOS PERO VA CREANDO COLUMNAS AUNQUE NO HAYA ELEMENTOS.
+     EN AUTO-FILL VA ADAPTANDO LAS COLUMNAS, SI NO TIENE MAS ELEMETOS LOS ESTIRA.*/ 
+      }
+     .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+      grid-template-rows: repeat(3,200px);
+      grid-auto-rows: 150px;
+      grid-auto-flow: row;
+      grid-auto-columns: 1fr;
+      margin: auto;
+      margin-top: 30px;
+      gap: 20px;
+     }
+/*EN ESTE APARTADO SE VERA:
+GRID COLUMN Y GRID ROW.*/
+.grid-item {
+
+  background-color: #48e;
+  margin: 10px;
+  padding: 10px;
+  font-size: 30px;
+  color: #f00808;
+}
+/*ACA COLUMN 1 Y ROW 1 REPRESENTA EL MARGEN DONDE
+ARRANCA EL ELEMENTO QUE ES LA FILA UNO Y COLUMNA 1.
+ESTO DETERMINA LAS POCICIONES, PR ESTO TAMBIEN DETERMINA 
+DONDE TERMINA EÑ ELEMENTO QUE ES EN 3,POR LO QUE ABARCA
+UN ESPACIO MAS GRANDE.EN EL CASO DE LAS IMAGENES, SIEMPRE SE
+COLOCAN ADENTRO E UN BACKGROUND-IMAGE.TAMBIEN SE PUEDE ANOTAR:
+SPAN 2 EN COLUN Y SPAN 2 EN ROW, OSEA SE PUED CORRERDOS ESPACIOS.
+OTRA FORM ES:GRID-COLUMN: 1/SPAN 2 Y GRID-ROW: 1/SPAN 2.*/
+.grid-item:first-child {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  grid-column-end: 3;
+  grid-row-end: 3;
+  background-image: url ("ruta_small.jpg");
+  background-size: cover;
+  background-position: center;
+ }
+ /*EN ESTE APARTADO SE VERA:
+GRID FLOW:DENSE.ACA SE RELLENAN LOS HUECOS CON:
+GRID-AUTO-FLOW:DENSE.*/
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(150px, 1fr));
+  grid-auto-flow: dense;
+  margin:auto;
+  gap:10px;
+  padding: 10px;
+  min-height: 100vh;
+
+}
+.grid-item {
+
+  background-color: #48e;
+  font-size: 30px;
+  border-radius: 16px;
+  background-image: url("ruta_medium.jpg");
+  background-size:cover;
+  background-position: center;
+
+} /*EN ESTE APARTADO SE VERA:
+GRID AREA.*/
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(150px, 1fr));
+  grid-auto-flow: dense;
+  margin:auto;
+  gap:10px;
+  padding: 10px;
+  min-height: 100vh;
+
+}
+.grid-item {
+
+  background-color: #48e;
+  font-size: 30px;
+  border-radius: 16px;
+  background-image: url("ruta_medium.jpg");
+  background-size:cover;
+  background-position: center;
+
+}
+.grid-item:nth-child(10){
+  /*ACA SE DA EL ROW Y DESPUES EL COLUMN,
+  CRECE 2 FILAS Y 3 COLUMNAS*/
+  grid-area: span 2/ span 3;
+}
