@@ -72,9 +72,9 @@ OTRA FORM ES:GRID-COLUMN: 1/SPAN 2 Y GRID-ROW: 1/SPAN 2.*/
 .grid-item:first-child {
   grid-column-start: 1;
   grid-row-start: 1;
-  grid-column-end: 3;
+  grid-column-end: 2;
   grid-row-end: 3;
-  background-image: url ("Emma.jpg");
+  background-image: url ("ruta_small.jpg");
   background-size: cover;
   background-position: center;
  }
