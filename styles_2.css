@@ -74,7 +74,7 @@ OTRA FORM ES:GRID-COLUMN: 1/SPAN 2 Y GRID-ROW: 1/SPAN 2.*/
   grid-row-start: 1;
   grid-column-end: 3;
   grid-row-end: 3;
-  background-image: url ("ruta_small.jpg");
+  background-image: url ("Emma.jpg");
   background-size: cover;
   background-position: center;
  }
@@ -96,7 +96,7 @@ GRID-AUTO-FLOW:DENSE.*/
   background-color: #48e;
   font-size: 30px;
   border-radius: 16px;
-  background-image: url("ruta_medium.jpg");
+  background-image: url("Isaac.jpg");
   background-size:cover;
   background-position: center;
 
@@ -117,7 +117,7 @@ GRID AREA.*/
   background-color: #48e;
   font-size: 30px;
   border-radius: 16px;
-  background-image: url("ruta_medium.jpg");
+  background-image: url("Emma.jpg");
   background-size:cover;
   background-position: center;
 
